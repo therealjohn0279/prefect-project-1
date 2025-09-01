@@ -15,7 +15,7 @@ push: null
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
-    repository: git@github.com:therealjohn0279/prefect-project-1.git
+    repository: https://github.com/therealjohn0279/prefect-project-1.git
     branch: master
 
 # the deployments section allows you to provide configuration for deploying flows
