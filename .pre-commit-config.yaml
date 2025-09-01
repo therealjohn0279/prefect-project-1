@@ -10,7 +10,7 @@ repos:
     hooks:
       - id: pytest-cov
         name: pytest with coverage
-        entry: uv run pytest --cov=python_devcontainer_template --cov-fail-under=95
+        entry: uv run pytest --cov=prefect_project_1 --cov-fail-under=95
         language: system
         pass_filenames: false
         always_run: true

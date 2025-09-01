@@ -8,7 +8,7 @@ and follow Python testing best practices.
 from unittest.mock import patch
 
 import pytest
-from python_devcontainer_template.greet.greeter import Greeter, main
+from prefect_project_1.greet.greeter import Greeter, main
 
 
 class TestGreeterInit:
@@ -162,7 +162,7 @@ class TestMainFunction:
         captured = capsys.readouterr()
         assert captured.out == "Hello World\n"
 
-    @patch("python_devcontainer_template.greet.greeter.Greeter")
+    @patch("prefect_project_1.greet.greeter.Greeter")
     def test_main_function_mocked(self, mock_greeter_class):
         """Test main function with mocked Greeter class."""
         mock_greeter_instance = mock_greeter_class.return_value

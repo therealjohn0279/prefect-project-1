@@ -1,4 +1,4 @@
-from python_devcontainer_template.greet.greeter import Greeter
+from prefect_project_1.greet.greeter import Greeter
 
 if __name__ == "__main__":
     greeter = Greeter()
