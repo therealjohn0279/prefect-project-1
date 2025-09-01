@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.8
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: pytest-cov
+        name: pytest with coverage
+        entry: uv run pytest --cov=python_devcontainer_template --cov-fail-under=95
+        language: system
+        pass_filenames: false
+        always_run: true
