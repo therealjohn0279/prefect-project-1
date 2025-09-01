@@ -1,18 +1,10 @@
+# prefect.yaml
 name: hello-world-project
-prefect-version: 3.4.0
-
-build:
-  - prefect_docker.deployments.steps.build_docker_image:
-      id: build-image
-      requires: prefect-docker>=0.6.0
-      image_name: hello-world
-      tag: latest
-      dockerfile: auto
 
 deployments:
   - name: hello-world-deployment
     entrypoint: flows/hello_flow.py:hello_world_flow
     work_pool:
-      name: default-agent-pool
+      name: github  # Uses Prefect's managed GitHub execution
     parameters:
-      name: "Prefect Cloud"
+      name: "GitHub"
