@@ -10,6 +10,7 @@ requires-python = ">=3.11"
 
 dependencies = [
     "prefect>=3.4.14",
+    "prefect-cloud>=0.1.7",
     "ruff>=0.12.10",
 ]
 
