@@ -1,0 +1,33 @@
+{
+  "name": "Python 3.11 Dev Container",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "python-dev",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "/tmp/post_create.sh",
+  "forwardPorts": [4200],
+  "portsAttributes": {
+    "4200": {
+      "label": "Prefect UI",
+      "onAutoForward": "notify"
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash",
+            "args": ["-l"]
+          }
+        }
+      }
+    }
+  }
+}
